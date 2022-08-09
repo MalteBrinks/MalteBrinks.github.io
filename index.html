@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>duck!</title>
+        <link rel="shortcut icon" href="https://th.bing.com/th/id/R.90181c5c7db83d0927da6e08e031c974?rik=iqJCj0FvBMKKfw&riu=http%3a%2f%2fpixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com%2fimage%2f07bca204bbf65e5.png&ehk=qDbsuma1jvMy2v1NYVNQ23hHhTIq3gHFwYUCpB7a%2bto%3d&risl=&pid=ImgRaw&r=0" type="image/x-icon">
+    </head>
+    <body>
+        <canvas width="10000px" height="10000px"></canvas>
+        <img id="img" width="100px"  style="visibility:hidden" src="https://th.bing.com/th/id/R.90181c5c7db83d0927da6e08e031c974?rik=iqJCj0FvBMKKfw&riu=http%3a%2f%2fpixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com%2fimage%2f07bca204bbf65e5.png&ehk=qDbsuma1jvMy2v1NYVNQ23hHhTIq3gHFwYUCpB7a%2bto%3d&risl=&pid=ImgRaw&r=0" alt="">
+    </body>
+    <script>
+        function getCursorPosition(canvas, event) {
+            const rect = canvas.getBoundingClientRect()
+            const x = event.clientX - rect.left
+            const y = event.clientY - rect.top
+            return [x, y]
+        }
+        var img = document.getElementById('img')
+        const canvas = document.querySelector('canvas')
+        var scale = 2;
+        canvas.width = 10000;
+        canvas.height = 10000;
+        canvas.addEventListener('mousedown', function(e) {
+            var x = getCursorPosition(canvas, e)
+            console.log(x)
+            var ctx = canvas.getContext('2d');
+            ctx.drawImage(img, x[0]-50, x[1]-40, 100, 80);
+        })
+    </script>
+</html>
