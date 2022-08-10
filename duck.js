@@ -16,10 +16,6 @@ canvas.addEventListener('mousedown', function(e) {
     ctx.drawImage(img, x[0]-50, x[1]-40, 100, 80);
 })
 
-canvas.addEventListener('touchend', function(e) {
-    var x = getCursorPosition(canvas, e)
-    e.
-    console.log("tocuh"+x)
-    var ctx = canvas.getContext('2d');
-    ctx.drawImage(img, x[0]-50, x[1]-40, 100, 80);
-})
+window.onload = function(){
+    alert("This side only works on Computer!")
+}
